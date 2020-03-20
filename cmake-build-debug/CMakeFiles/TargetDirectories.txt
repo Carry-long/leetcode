@@ -1,5 +1,0 @@
-D:/cpp/cmake-build-debug/CMakeFiles/twonumadd.dir
-D:/cpp/cmake-build-debug/CMakeFiles/cpp.dir
-D:/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/cpp/cmake-build-debug/CMakeFiles/test.dir
-D:/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir

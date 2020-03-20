@@ -1,4 +1,0 @@
-D:\jebrains\CLion\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=D:/Applications/mingw64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=D:/Applications/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=D:/Applications/mingw64/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" D:\cpp
--- Configuring done
--- Generating done
--- Build files have been written to: D:/cpp/cmake-build-debug

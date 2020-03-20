@@ -1,3 +1,0 @@
-D:\jebrains\CLion\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\d.dir/objects.a
-D:\Applications\mingw64\bin\ar.exe cr CMakeFiles\d.dir/objects.a @CMakeFiles\d.dir\objects1.rsp
-D:\Applications\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\d.dir/objects.a -Wl,--no-whole-archive  -o d.exe -Wl,--out-implib,libd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\d.dir\linklibs.rsp
