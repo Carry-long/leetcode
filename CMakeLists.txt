@@ -3,6 +3,5 @@ project(cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(cpp main.cpp)
-add_executable(test test.cpp)
-add_executable(twonumadd twonumadd.cpp)
+add_executable(twosum TwoSum.cpp)
+add_executable(addtwonumbers AddTwoNumbers.cpp)
