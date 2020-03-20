@@ -52,12 +52,14 @@ CMAKE_BINARY_DIR = D:\cpp\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/twonumadd.dir/all
 all: CMakeFiles/cpp.dir/all
 all: CMakeFiles/test.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
+clean: CMakeFiles/twonumadd.dir/clean
 clean: CMakeFiles/cpp.dir/clean
 clean: CMakeFiles/test.dir/clean
 
@@ -67,6 +69,33 @@ clean: CMakeFiles/test.dir/clean
 preinstall:
 
 .PHONY : preinstall
+
+#=============================================================================
+# Target rules for target CMakeFiles/twonumadd.dir
+
+# All Build rule for target.
+CMakeFiles/twonumadd.dir/all:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/depend
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\cpp\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target twonumadd"
+.PHONY : CMakeFiles/twonumadd.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/twonumadd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp\cmake-build-debug\CMakeFiles 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/twonumadd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\cpp\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/twonumadd.dir/rule
+
+# Convenience name for target.
+twonumadd: CMakeFiles/twonumadd.dir/rule
+
+.PHONY : twonumadd
+
+# clean rule for target.
+CMakeFiles/twonumadd.dir/clean:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/clean
+.PHONY : CMakeFiles/twonumadd.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/cpp.dir

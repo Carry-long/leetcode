@@ -110,6 +110,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named twonumadd
+
+# Build rule for target.
+twonumadd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 twonumadd
+.PHONY : twonumadd
+
+# fast build rule for target.
+twonumadd/fast:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/build
+.PHONY : twonumadd/fast
+
+#=============================================================================
 # Target rules for targets named cpp
 
 # Build rule for target.
@@ -189,12 +202,40 @@ test.cpp.s:
 	$(MAKE) -f CMakeFiles\test.dir\build.make CMakeFiles/test.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+twonumadd.obj: twonumadd.cpp.obj
+
+.PHONY : twonumadd.obj
+
+# target to build an object file
+twonumadd.cpp.obj:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/twonumadd.cpp.obj
+.PHONY : twonumadd.cpp.obj
+
+twonumadd.i: twonumadd.cpp.i
+
+.PHONY : twonumadd.i
+
+# target to preprocess a source file
+twonumadd.cpp.i:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/twonumadd.cpp.i
+.PHONY : twonumadd.cpp.i
+
+twonumadd.s: twonumadd.cpp.s
+
+.PHONY : twonumadd.s
+
+# target to generate assembly for a file
+twonumadd.cpp.s:
+	$(MAKE) -f CMakeFiles\twonumadd.dir\build.make CMakeFiles/twonumadd.dir/twonumadd.cpp.s
+.PHONY : twonumadd.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
+	@echo ... twonumadd
 	@echo ... cpp
 	@echo ... rebuild_cache
 	@echo ... test
@@ -205,6 +246,9 @@ help:
 	@echo ... test.obj
 	@echo ... test.i
 	@echo ... test.s
+	@echo ... twonumadd.obj
+	@echo ... twonumadd.i
+	@echo ... twonumadd.s
 .PHONY : help
 
 
