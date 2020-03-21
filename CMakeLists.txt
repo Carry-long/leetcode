@@ -3,5 +3,7 @@ project(cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(twosum TwoSum.cpp)
 add_executable(addtwonumbers AddTwoNumbers.cpp)
+add_executable(twosum TwoSum.cpp)
+add_executable(longestsubstringwithoutrepeatingcharacters LongestSubstringWithoutRepeatingCharacters.cpp)
+add_executable(test test.cpp)
