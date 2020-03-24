@@ -7,7 +7,8 @@ using namespace std;
 //#define false
 
 #ifdef True
-//滑动窗口，两个指针 *first 和 *second维护一个窗口，在用一个指针cur 从 *first指向的元素开始，比较窗口中是否有值与 *second指向的值相同
+//求无重复字符的最长子串，使用滑动窗口，两个指针 *first 和 *second维护一个窗口，在用一个指针cur 从 *first指向的元素开始，比较窗口中是否有值与 *second指向的值相同
+//若值相同，则first 指针指向相同值的后面一个元素
 //时间复杂度 O(n^2)
 int lengthOfLongestSubstring(string s) {
 
@@ -42,10 +43,11 @@ int lengthOfLongestSubstring(string s) {
         char tmp = s[move];
         //umap[tmp]>=jump 是为了排除 类似 tmmzuxt 这种情况，当重复的元素出现在 jump 指针前，应该忽略
         if(umap.find(tmp)!=umap.end() && umap[tmp]>=jump) {
-            jump =  umap[tmp] + 1;
+            jump =  umap[tmp] + 1;  //tmp指向相同元素的后一位
         }
         res = max(res,(move-jump+1));
-        umap[tmp] = move;
+        umap[tmp] = move; //map中key为char，value为对应的index
+        //insert方法会忽略重复key，而不是替换，所以这里不用insert
         move++;
     }
     return res;
