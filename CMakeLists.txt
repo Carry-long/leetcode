@@ -9,3 +9,5 @@ add_executable(longestsubstringwithoutrepeatingcharacters LongestSubstringWithou
 add_executable(test test.cpp)
 add_executable(medianoftwosortedarrays MedianOfTwoSortedArrays.cpp)
 add_executable(longestpalindromicsubstring LongestPalindromicSubstring.cpp)
+add_executable(zigzagconversion ZigzagConversion.cpp)
+add_executable(reverseinteger ReverseInteger.cpp)
