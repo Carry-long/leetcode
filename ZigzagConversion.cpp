@@ -7,44 +7,44 @@ using namespace std;
 string convert(string s, int numRows) {
 
     int len = s.length();
-    if(len<=1 || numRows==1){
+    if(len<=1 || len<=numRows || numRows==1) {
         return s;
     }
-    if(numRows>len){
-        numRows = len;
-    }
-    int flag = 0;;
-    int jump = (numRows-1)*2;
-    char cs[len];
-    int index = 0;
-    for(int i=0; i<numRows; i++) {
-        int tmp = flag;
-        cs[index++] = s[flag];
-        while (true) {
-            if((jump - 2 * i)!=0 && (tmp + jump - 2 * i)<len) {
-                cs[index++] = s[tmp + jump - 2 * i];
-                tmp += jump - 2 * i;
-            }
-            if( ((jump - 2 * i) < 2 * i) && ((tmp + jump - 2 * i) >= len)) {
-                break;
-            }
-            if(i==0 && ((tmp + jump - 2 * i) >= len)) {
-                break;
-            }
 
-            if (i!=0 && (tmp + 2 * i) <len) {
-                cs[index++] = s[tmp+2 * i];
-                tmp += 2 * i;
+    string ret;
+    for(int i=0; i<numRows; i++) {
+        int tag = (numRows - 1)*2;
+        int jump = tag - i*2;
+        int tmp = i;
+        ret += s[tmp];    //初始化每一行开头
+        if(jump ==0 || (tag-jump)==0) {
+            while (true) {
+                int maxValue = max(jump,tag-jump);
+                if((tmp + maxValue) <len) {
+                    ret += s[tmp + maxValue];
+                    tmp += maxValue;
+                } else {
+                    break;
+                }
             }
-            if(((jump - 2 * i) > 2 * i) && ((tmp + 2 * i) >=len)) {
-                break;
+        } else {
+            while (true) {
+                if ((tmp + jump) < len) {
+                    ret += s[tmp + jump];
+                }
+                tmp += jump;
+                if (tmp >= len) {
+                    break;
+                }
+                if ((tmp + tag - jump) < len) {
+                    ret += s[tmp + tag - jump];
+                }
+                tmp += tag - jump;
+                if (tmp >= len) {
+                    break;
+                }
             }
         }
-        flag++;
-    }
-    string ret;
-    for (char row : cs) {
-        ret += row;
     }
     return ret;
 }
@@ -52,13 +52,15 @@ string convert(string s, int numRows) {
 int main() {
 
     string str1 = "PAYPALISHIRING";
-//    cout<< str1 <<endl;
-//    cout << "ABCD" <<endl;
-    cout << convert(str1,4) <<endl;
-    string str2 = "ABCD";
-    cout << convert(str2,4) <<endl;
-//    string str3 = "LEETCODEISHIRING";
-//    cout << convert(str1,3) <<endl;
-//    cout << convert(str1,3) <<endl;
-return 0;
+    cout<<"PAHNAPLSIIGYIR = " << convert(str1,3) <<endl;
+    cout<<"PINALSIGYAHRPI = " << convert(str1,4) <<endl;
+
+    string str2 = "ABCDE";
+    //cout <<"ABDC = "<< convert(str2,3) <<endl;
+    cout <<"ABCED = "<< convert(str2,4) <<endl;
+
+    string str3 = "LEETCODEISHIRING";
+    cout <<"LCIRETOESIIGEDHN = "<< convert(str3,3) <<endl;
+    cout << "LDREOEIIECIHNTSG = " << convert(str3,4) <<endl;
+    return 0;
 }
